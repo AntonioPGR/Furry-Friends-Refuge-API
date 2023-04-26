@@ -36,3 +36,7 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
 
   def get_short_name(self):
     return self.nome
+  
+  class Meta:
+    verbose_name = 'Usuário'
+    verbose_name_plural = 'Usuários'

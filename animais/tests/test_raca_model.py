@@ -21,6 +21,6 @@ class RacaModelTestCase(GlobalModelTestCase):
     raca_incorreta = Raca(
       especie=especie_criada,
       nome='golden',
-      porte='G'
+      porte='Grande'
     )
     self.espera_erro_de_validacao(raca_incorreta)

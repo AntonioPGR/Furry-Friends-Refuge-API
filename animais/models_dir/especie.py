@@ -12,8 +12,8 @@ class Especie(models.Model):
   )
   
   class Meta:
-    verbose_name='Especie'
-    verbose_name_plural = 'Especies'
+    verbose_name='Espécie'
+    verbose_name_plural = 'Espécies'
     
   def __str__(self):
     return self.nome
