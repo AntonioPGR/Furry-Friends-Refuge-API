@@ -1,5 +1,5 @@
 from animais.models import Especie
-from tools.test_global_model import GlobalModelTestCase 
+from tools.global_test_model import GlobalModelTestCase 
 
 
 class EspecieModelTestCase(GlobalModelTestCase):

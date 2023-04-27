@@ -1,7 +1,7 @@
 from animais.models import Animal, Especie, Raca
 from usuarios.models import Usuario
 from abrigos.models import Abrigo
-from tools.test_global_model import GlobalModelTestCase 
+from tools.global_test_model import GlobalModelTestCase 
 from datetime import date
 
 class AnimalModelTestCase(GlobalModelTestCase):

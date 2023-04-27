@@ -1,5 +1,5 @@
 from abrigos.models import Abrigo
-from tools.test_global_model import GlobalModelTestCase
+from tools.global_test_model import GlobalModelTestCase
 
 
 class AbrigoModelTestCase(GlobalModelTestCase):
