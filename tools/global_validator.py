@@ -4,20 +4,24 @@ from django.core.exceptions import ValidationError
 
 
 class GlobalValidator:
-  @staticmethod
-  def validar_nome(nome:str):
+  @classmethod
+  def validar_nome(cls, nome:str):
     if not nome.isalpha():
-      raise ValidationError('São proibidos simbolos e numeros no campo nome')
+      cls.raise_validation_error('São proibidos simbolos e numeros no campo nome')
     return nome
   
-  @staticmethod
-  def validar_email(email:str):
+  @classmethod
+  def validar_email(cls, email:str):
     if '@' not in email:
-      raise ValidationError("O campo de email deve contem '@' !!")
+      cls.raise_validation_error("O campo de email deve contem '@' !!")
     return email
   
-  @staticmethod
-  def validar_nascimento(nascimento:date):
+  @classmethod
+  def validar_nascimento(cls, nascimento:date):
     if nascimento > date.today():
-      raise ValidationError('A data de nascimento do usuário não pode ser no futuro!')
+      cls.raise_validation_error('A data de nascimento do usuário não pode ser no futuro!')
     return nascimento
+
+  @staticmethod
+  def raise_validation_error(message):
+    raise ValidationError(message)

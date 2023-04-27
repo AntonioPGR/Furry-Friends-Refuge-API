@@ -6,8 +6,8 @@ opcoes_de_porte = [
   'P', 'M', 'G'
 ]
 class RacaValidator(GlobalValidator):
-  @staticmethod
-  def validar_porte(porte:str):
+  @classmethod
+  def validar_porte(cls, porte:str):
     if porte not in opcoes_de_porte:
-      raise ValidationError('A opção do porte é invalida, favor escolher entre as opções validas!')
+      cls.raise_validation_error('A opção do porte é invalida, favor escolher entre as opções validas!')
     return porte
