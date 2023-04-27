@@ -1,6 +1,10 @@
-from django.contrib import admin
+from tools.global_admin_page import GlobalAdminPage
 from usuarios.models import Usuario
 
-class UsuarioAdmin(admin.ModelAdmin):
-  pass
-admin.site.register(Usuario, UsuarioAdmin)
+class UsuariosAdmin(GlobalAdminPage):
+  list_display = ['email', 'nome', 'nascimento']
+  list_display_links = ['nome', 'email']
+  ordering = ['email']
+  search_fields = ['email']
+  
+GlobalAdminPage.registerAdminPage(Usuario, UsuariosAdmin)
