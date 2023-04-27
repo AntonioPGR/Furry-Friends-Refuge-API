@@ -1,4 +1,6 @@
 from django.core.exceptions import ValidationError
+from datetime import date
+from django.core.exceptions import ValidationError
 
 
 class GlobalValidator:
@@ -13,3 +15,9 @@ class GlobalValidator:
     if '@' not in email:
       raise ValidationError("O campo de email deve contem '@' !!")
     return email
+  
+  @staticmethod
+  def validar_nascimento(nascimento:date):
+    if nascimento > date.today():
+      raise ValidationError('A data de nascimento do usuário não pode ser no futuro!')
+    return nascimento

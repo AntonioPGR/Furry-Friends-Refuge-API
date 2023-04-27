@@ -3,6 +3,13 @@ from animais.validators import EspecieValidator
 
 
 class Especie(models.Model):
+  """
+  Representa uma espécie cadastrada no sistema
+
+  Atributos:
+  - nome: o nome da espécie ( obrigatório e unico, com até 30 caracteres )
+  """
+  
   nome = models.CharField(
     max_length=30, 
     unique=True, 

@@ -2,13 +2,33 @@ from django.db import models
 from animais.models import Raca
 from abrigos.models import Abrigo
 from usuarios.models import Usuario
+from animais.validators import AnimalValidator
 
 
 class Animal(models.Model):
+  """
+    Representa um animal cadastrado no sistema.
+
+    Atributos:
+    - nome: O nome do animal (obrigatório, até 50 caracteres).
+    - sexo: O sexo do animal (obrigatório, escolha entre: 'masculino' e 'feminino').
+    - descricao: Uma descrição breve do animal (opcional).
+    - status: O status do animal no abrigo (obrigatório, escolha entre: 'disponível para adoção',  'adotado' e 'em processo de adoção').
+    - foto: Uma imagem do animal (obrigatório).
+    - nascimento: A data de nascimento do animal (opcional).
+    - entrada_abrigo: A data em que o animal entrou no abrigo (obrigatório).
+    - raca: A raça do animal (obrigatório, chave estrangeira para a classe Raca).
+    - abrigo: O abrigo em que o animal está (obrigatório, chave estrangeira para a classe Abrigo).
+    - adotado_por: O usuário que adotou o animal (opcional, chave estrangeira para a classe Usuario).
+    """
+  
   nome = models.CharField(
     max_length=50, 
     null=False, 
-    blank=False
+    blank=False,
+    validators=[
+      AnimalValidator.validar_nome
+    ]
   )
   sexo = models.CharField(
     max_length=1, 
@@ -34,12 +54,18 @@ class Animal(models.Model):
   )
   nascimento = models.DateField(
     null=True, 
-    blank=True
+    blank=True,
+    validators=[
+      AnimalValidator.validar_nascimento
+    ]
   )
   entrada_abrigo = models.DateField(
     auto_now_add=True, 
     null=False, 
-    blank=False
+    blank=False,
+    validators=[
+      AnimalValidator.validar_entrada_abrigo
+    ]
   )
   raca = models.ForeignKey(
     to=Raca, 

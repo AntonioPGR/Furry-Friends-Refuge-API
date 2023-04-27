@@ -3,24 +3,23 @@ from tools.test_global_model import GlobalModelTestCase
 
 
 class RacaModelTestCase(GlobalModelTestCase):
-  def test_raca_criada_corretamente(self):
-    especie_criada = Especie.objects.create(
+  def setUp(self):
+    self.especie = Especie.objects.create(
       nome='Cachorro'
     )
+  
+  def test_raca_criada_corretamente(self):
     raca_correta = Raca(
-      especie=especie_criada,
+      especie=self.especie,
       nome='golden',
       porte='G'
     )
     self.espera_salvar_corretamente(raca_correta)
-  
-  def test_raca_criada_corretamente(self):
-    especie_criada = Especie.objects.create(
-      nome='Cachorro'
-    )
-    raca_incorreta = Raca(
-      especie=especie_criada,
+    
+  def test_raca_criada_incorretamente(self):
+    raca_correta = Raca(
+      especie=self.especie,
       nome='golden',
       porte='Grande'
     )
-    self.espera_erro_de_validacao(raca_incorreta)
+    self.espera_erro_de_validacao(raca_correta)

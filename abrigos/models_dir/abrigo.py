@@ -3,10 +3,25 @@ from abrigos.validators import AbrigoValidator
 
 
 class Abrigo(models.Model):
+  """
+  Representa um abrigo de animais.
+
+  Atributos:
+  - nome: O nome do abrigo (obrigatório, até 30 caracteres).
+  - foto: A imagem do abrigo (opcional).
+  - email: O endereço de e-mail do abrigo (obrigatório, único, até 100 caracteres).
+  - telefone: O número de telefone do abrigo (obrigatório, único, 11 caracteres).
+  - cep: O CEP do abrigo (obrigatório, 8 caracteres).
+  - descricao: A descrição do abrigo (obrigatório, até 300 caracteres).
+  """
+  
   nome = models.CharField(
     max_length=30, 
     blank=False, 
-    null=False
+    null=False,
+    validators=[
+      AbrigoValidator.validar_nome
+    ]
   )
   foto = models.ImageField(
     upload_to='abrigos_images/%d-%b', 

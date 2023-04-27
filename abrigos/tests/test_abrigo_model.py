@@ -6,7 +6,7 @@ class AbrigoModelTestCase(GlobalModelTestCase):
   
   def test_criacao_de_abrigo_correto(self):
     abrigo_correto = Abrigo(
-      nome='abrigo1', 
+      nome='abrigo', 
       email='teste@gmail.com', 
       telefone='35992202021', 
       cep='37701242', 
