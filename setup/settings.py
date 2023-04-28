@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'abrigos.apps.AbrigosConfig',
     'usuarios.apps.UsuariosConfig',
     'animais.apps.AnimaisConfig',
+    # INSTALLED
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -126,7 +128,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 
-#MEDIA
+# MEDIA
 MEDIA_URL = 'media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -138,3 +140,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # USER
 AUTH_USER_MODEL = "usuarios.Usuario"
+
+# REST FRAMEWORK
+REST_FRAMEWORK = {
+  'DEFAULT_PERMISSION_CLASSES': [
+    'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+  ]
+}
