@@ -1,0 +1,62 @@
+[
+  {
+    "model": "abrigos.Abrigo",
+    "pk": 1,
+    "fields": {
+      "nome": "Abrigo Feliz",
+      "foto": "",
+      "email": "abrigofeliz@gmail.com",
+      "telefone": "11999999999",
+      "cep": "01001000",
+      "descricao": "O Abrigo Feliz acolhe cães e gatos de todas as idades e portes. Venha nos visitar!"
+    }
+  },
+  {
+    "model": "abrigos.Abrigo",
+    "pk": 2,
+    "fields": {
+      "nome": "Lar dos Animais",
+      "foto": "",
+      "email": "lardosanimais@gmail.com",
+      "telefone": "11988888888",
+      "cep": "02002000",
+      "descricao": "O Lar dos Animais é um abrigo que cuida de animais abandonados e vítimas de maus tratos. Nosso objetivo é promover a adoção responsável e consciente."
+    }
+  },
+  {
+    "model": "abrigos.Abrigo",
+    "pk": 3,
+    "fields": {
+      "nome": "Abrigo dos Anjos",
+      "foto": "",
+      "email": "abrigodosanjos@gmail.com",
+      "telefone": "11977777777",
+      "cep": "03003000",
+      "descricao": "O Abrigo dos Anjos acolhe cães e gatos abandonados em situação de risco e os encaminha para adoção responsável. Ajudar animais é uma missão de amor!"
+    }
+  },
+  {
+    "model": "abrigos.Abrigo",
+    "pk": 4,
+    "fields": {
+      "nome": "Casa dos Bichos",
+      "foto": "",
+      "email": "casadosbichos@gmail.com",
+      "telefone": "11966666666",
+      "cep": "04004000",
+      "descricao": "A Casa dos Bichos é um abrigo que atua na proteção animal e promoção da saúde e bem-estar dos animais. Ajude-nos a fazer a diferença!"
+    }
+  },
+  {
+    "model": "abrigos.Abrigo",
+    "pk": 5,
+    "fields": {
+      "nome": "Amor de Pet",
+      "foto": "",
+      "email": "amordepet@gmail.com",
+      "telefone": "11955555555",
+      "cep": "05005000",
+      "descricao": "O Amor de Pet é um abrigo que acolhe animais abandonados e feridos, promove a reabilitação e os encaminha para adoção responsável. Junte-se a nós nessa missão!"
+    }
+  }
+]

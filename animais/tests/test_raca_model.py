@@ -3,14 +3,11 @@ from tools.global_test_model import GlobalModelTestCase
 
 
 class RacaModelTestCase(GlobalModelTestCase):
-  def setUp(self):
-    self.especie = Especie.objects.create(
-      nome='Cachorro'
-    )
+  fixtures = ['fixtures/especie.json', ]
   
   def test_raca_criada_corretamente(self):
     raca_correta = Raca(
-      especie=self.especie,
+      especie=Especie.objects.first(),
       nome='golden',
       porte='G'
     )
@@ -18,7 +15,7 @@ class RacaModelTestCase(GlobalModelTestCase):
     
   def test_raca_criada_incorretamente(self):
     raca_correta = Raca(
-      especie=self.especie,
+      especie=Especie.objects.first(),
       nome='golden',
       porte='Grande'
     )

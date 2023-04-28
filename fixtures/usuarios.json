@@ -1,0 +1,93 @@
+[
+  {
+    "model": "usuarios.Usuario",
+    "pk": 1,
+    "fields": {
+      "email": "user1@example.com",
+      "nome": "John",
+      "sobrenome": "Doe",
+      "nascimento": "1980-01-01",
+      "is_active": false,
+      "is_staff": false,
+      "date_joined": "2022-03-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "usuarios.Usuario",
+    "pk": 2,
+    "fields": {
+      "email": "user2@example.com",
+      "nome": "Jane",
+      "sobrenome": "Doe",
+      "nascimento": "1985-02-01",
+      "is_active": false,
+      "is_staff": false,
+      "date_joined": "2022-03-02T12:00:00Z"
+    }
+  },
+  {
+    "model": "usuarios.Usuario",
+    "pk": 3,
+    "fields": {
+      "email": "user3@example.com",
+      "nome": "Bob",
+      "sobrenome": "Smith",
+      "nascimento": "1988-03-01",
+      "is_active": false,
+      "is_staff": false,
+      "date_joined": "2022-03-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "usuarios.Usuario",
+    "pk": 4,
+    "fields": {
+      "email": "user4@example.com",
+      "nome": "Alice",
+      "sobrenome": "Brown",
+      "nascimento": "1990-04-01",
+      "is_active": false,
+      "is_staff": false,
+      "date_joined": "2022-03-04T12:00:00Z"
+    }
+  },
+  {
+    "model": "usuarios.Usuario",
+    "pk": 5,
+    "fields": {
+      "email": "user5@example.com",
+      "nome": "Jack",
+      "sobrenome": "Johnson",
+      "nascimento": "1992-05-01",
+      "is_active": false,
+      "is_staff": false,
+      "date_joined": "2022-03-05T12:00:00Z"
+    }
+  },
+  {
+    "model": "usuarios.Usuario",
+    "pk": 6,
+    "fields": {
+      "email": "user6@example.com",
+      "nome": "Lisa",
+      "sobrenome": "Davis",
+      "nascimento": "1995-06-01",
+      "is_active": false,
+      "is_staff": false,
+      "date_joined": "2022-03-06T12:00:00Z"
+    }
+  },
+  {
+    "model": "usuarios.Usuario",
+    "pk": 7,
+    "fields": {
+      "email": "user7@example.com",
+      "nome": "Mark",
+      "sobrenome": "Taylor",
+      "nascimento": "1998-07-01",
+      "is_active": false,
+      "is_staff": false,
+      "date_joined": "2022-03-07T12:00:00Z"
+    }
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "model": "animais.Raca",
+    "pk": 1,
+    "fields": {
+      "nome": "Vira-lata",
+      "porte": "M",
+      "especie": 1
+    }
+  },
+  {
+    "model": "animais.Raca",
+    "pk": 2,
+    "fields": {
+      "nome": "Poodle",
+      "porte": "P",
+      "especie": 1
+    }
+  },
+  {
+    "model": "animais.Raca",
+    "pk": 3,
+    "fields": {
+      "nome": "Yorkshire Terrier",
+      "porte": "P",
+      "especie": 1
+    }
+  },
+  {
+    "model": "animais.Raca",
+    "pk": 4,
+    "fields": {
+      "nome": "Bulldog",
+      "porte": "M",
+      "especie": 1
+    }
+  },
+  {
+    "model": "animais.Raca",
+    "pk": 5,
+    "fields": {
+      "nome": "Boxer",
+      "porte": "G",
+      "especie": 1
+    }
+  },
+  {
+    "model": "animais.Raca",
+    "pk": 6,
+    "fields": {
+      "nome": "Beagle",
+      "porte": "M",
+      "especie": 1
+    }
+  },
+  {
+    "model": "animais.Raca",
+    "pk": 7,
+    "fields": {
+      "nome": "Bengal",
+      "porte": "P",
+      "especie": 2
+    }
+  },
+  {
+    "model": "animais.Raca",
+    "pk": 8,
+    "fields": {
+      "nome": "Siamês",
+      "porte": "P",
+      "especie": 2
+    }
+  },
+  {
+    "model": "animais.Raca",
+    "pk": 9,
+    "fields": {
+      "nome": "Persa",
+      "porte": "M",
+      "especie": 2
+    }
+  },
+  {
+    "model": "animais.Raca",
+    "pk": 10,
+    "fields": {
+      "nome": "Sphynx",
+      "porte": "P",
+      "especie": 2
+    }
+  }
+]

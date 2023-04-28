@@ -1,0 +1,92 @@
+[
+  {
+    "model": "animais.Animal",
+    "pk": 1,
+    "fields": {
+      "nome": "Branco",
+      "sexo": "M",
+      "descricao": "Branco é um cachorro dócil e brincalhão, adora passear e correr no parque.",
+      "status": "D",
+      "foto": "",
+      "nascimento": "2019-01-20",
+      "entrada_abrigo": "2021-01-10",
+      "raca": 1,
+      "abrigo": 1
+    }
+  },
+  {
+    "model": "animais.Animal",
+    "pk": 2,
+    "fields": {
+      "nome": "Mel",
+      "sexo": "F",
+      "descricao": "Mel é uma gata muito carinhosa e brincalhona, adora ficar no colo das pessoas.",
+      "status": "D",
+      "foto": "",
+      "nascimento": "2020-03-05",
+      "entrada_abrigo": "2022-01-15",
+      "raca": 3,
+      "abrigo": 1
+    }
+  },
+  {
+    "model": "animais.Animal",
+    "pk": 3,
+    "fields": {
+      "nome": "Thor",
+      "sexo": "M",
+      "descricao": "Thor é um cachorro grande e forte, ideal para quem procura um companheiro para atividades físicas.",
+      "status": "D",
+      "foto": "",
+      "nascimento": "2018-06-12",
+      "entrada_abrigo": "2022-03-05",
+      "raca": 2,
+      "abrigo": 2
+    }
+  },
+  {
+    "model": "animais.Animal",
+    "pk": 4,
+    "fields": {
+      "nome": "Bela",
+      "sexo": "F",
+      "descricao": "Bela é uma cadela muito inteligente e brincalhona, ideal para famílias com crianças.",
+      "status": "D",
+      "foto": "",
+      "nascimento": "2020-11-20",
+      "entrada_abrigo": "2022-04-10",
+      "raca": 1,
+      "abrigo": 2
+    }
+  },
+  {
+    "model": "animais.Animal",
+    "pk": 5,
+    "fields": {
+      "nome": "Rex",
+      "sexo": "M",
+      "descricao": "Rex é um cachorro muito fiel e protetor, ideal para quem procura um amigo para todas as horas.",
+      "status": "D",
+      "foto": "",
+      "nascimento": "2017-04-10",
+      "entrada_abrigo": "2021-09-15",
+      "raca": 2,
+      "abrigo": 3
+    }
+  },
+  {
+    "model": "animais.Animal",
+    "pk": 6,
+    "fields": {
+      "nome": "Mia",
+      "sexo": "F",
+      "descricao": "Mia é uma gata muito curiosa e independente, ideal para pessoas que trabalham fora de casa.",
+      "status": "D",
+      "foto": "",
+      "nascimento": "2019-08-01",
+      "entrada_abrigo": "2022-02-16",
+      "raca":3,
+      "abrigo":5
+    }
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "model": "animais.Especie",
+    "pk": 1,
+    "fields": {
+      "nome": "Cachorro"
+    }
+  },
+  {
+    "model": "animais.Especie",
+    "pk": 2,
+    "fields": {
+      "nome": "Gato"
+    }
+  }
+]
