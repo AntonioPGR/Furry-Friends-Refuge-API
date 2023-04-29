@@ -6,3 +6,5 @@ class AbrigosSerializer(ModelSerializer):
   class Meta:
     model = Abrigo
     fields = '__all__'
+    read_only_fields = ['id']
+    
