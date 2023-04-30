@@ -41,7 +41,7 @@ class UsuarioViewSemAuthTestCase(GlobalViewSemAuthTestCase):
   
   def test_get_lista_de_usuarios(self):
     response = self.fazer_requisicao_get()
-    self.espera_resposta_ser_ok(response)
+    self.espera_resposta_ser_forbidden(response)
   
   def test_post_para_criar_usuario(self):
     response = self.fazer_requisicao_post({

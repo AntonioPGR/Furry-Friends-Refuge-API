@@ -1,10 +1,9 @@
-from rest_framework.viewsets import ModelViewSet
 from abrigos.models import Abrigo
 from abrigos.serializers import AbrigosSerializer
+from tools.global_viewset import GlobalViewSet
 
 
-class AbrigoViewSet(ModelViewSet):
+class AbrigoViewSet(GlobalViewSet):
   queryset = Abrigo.objects.all()
   serializer_class = AbrigosSerializer
-  search_fields = ['nome']
-  ordering = ['nome']
+  

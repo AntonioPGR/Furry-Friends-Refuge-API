@@ -1,27 +1,21 @@
-from rest_framework.viewsets import ModelViewSet
 from animais.models import Especie, Raca, Animal
 from animais.serializers import EspeciesSerializer, RacasSerializer, AnimaisSerializer
+from tools.global_viewset import GlobalViewSet
 
-class EspecieViewSet(ModelViewSet):
+class EspecieViewSet(GlobalViewSet):
   queryset = Especie.objects.all()
   serializer_class = EspeciesSerializer
-  search_fields = ['nome']
-  ordering = ['nome']
   
   
-class RacaViewSet(ModelViewSet):
+class RacaViewSet(GlobalViewSet):
   queryset = Raca.objects.all()
   serializer_class = RacasSerializer
   filterset_fields = ['porte', 'especie']
-  search_fields = ['nome']
-  ordering = ['nome']
   
   
-class AnimalViewSet(ModelViewSet):
+class AnimalViewSet(GlobalViewSet):
   queryset = Animal.objects.all()
   serializer_class = AnimaisSerializer
   filterset_fields = ['sexo', 'status', 'raca', 'abrigo', 'adotado_por']
-  search_fields = ['nome']
-  ordering = ['nome']
   
   
