@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'animais.apps.AnimaisConfig',
     # INSTALLED
     'rest_framework',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -145,5 +146,10 @@ AUTH_USER_MODEL = "usuarios.Usuario"
 REST_FRAMEWORK = {
   'DEFAULT_PERMISSION_CLASSES': [
     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+  ],
+  'DEFAULT_FILTER_BACKENDS': [
+    'rest_framework.filters.SearchFilter',
+    'rest_framework.filters.OrderingFilter',
+    'django_filters.rest_framework.DjangoFilterBackend',
   ]
 }

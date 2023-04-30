@@ -1,5 +1,6 @@
 from abrigos.models import Abrigo
 from tools.global_test_model import GlobalModelTestCase
+from tools.global_test_view import GlobalViewTestCase
 
 
 class AbrigoModelTestCase(GlobalModelTestCase):
@@ -23,4 +24,42 @@ class AbrigoModelTestCase(GlobalModelTestCase):
       descricao='um abrigo ae'
     )
     self.espera_erro_de_validacao(abrigo_incorreto)
-      
+    
+    
+class AbrigoViewSemAuthTestCase(GlobalViewTestCase):
+  fixtures = [
+    'fixtures/abrigos.json',
+  ]
+  
+  def setUp(self):
+    super().setUp('abrigos')
+  
+  def test_get_lista_de_abrigos(self):
+    response = self.fazer_requisicao_get()
+    self.espera_resposta_ser_ok(response)
+  
+  def test_post_para_criar_abrigo(self):
+    response = self.fazer_requisicao_post({
+      'nome': 'abrigo1'
+    })
+    self.espera_resposta_ser_forbidden(response)
+    
+  def test_patch_para_modificar_abrigo(self):
+    response = self.fazer_requisicao_patch({
+      'id': Abrigo.objects.first().id,
+      'nome': 'abrigo1'
+    })
+    self.espera_resposta_ser_forbidden(response)
+    
+  def test_put_para_modificar_abrigo(self):
+    response = self.fazer_requisicao_put({
+      'id': Abrigo.objects.first().id,
+      'nome': 'abrigo1'
+    })
+    self.espera_resposta_ser_forbidden(response)
+    
+  def test_delete_para_deletar_abrigo(self):
+    response = self.fazer_requisicao_put({
+      'id': Abrigo.objects.first().id,
+    })
+    self.espera_resposta_ser_forbidden(response)

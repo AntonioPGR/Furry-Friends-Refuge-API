@@ -6,3 +6,5 @@ from abrigos.serializers import AbrigosSerializer
 class AbrigoViewSet(ModelViewSet):
   queryset = Abrigo.objects.all()
   serializer_class = AbrigosSerializer
+  search_fields = ['nome']
+  ordering = ['nome']
