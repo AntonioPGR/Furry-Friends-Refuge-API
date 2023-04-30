@@ -1,6 +1,6 @@
 from animais.models import Raca, Especie
 from tools.global_test_model import GlobalModelTestCase
-from tools.global_test_view import GlobalViewTestCase
+from tools.global_test_view_with_no_auth import GlobalViewSemAuthTestCase
 
 
 class RacaModelTestCase(GlobalModelTestCase):
@@ -23,7 +23,7 @@ class RacaModelTestCase(GlobalModelTestCase):
     self.espera_erro_de_validacao(raca_correta)
 
 
-class RacaViewSemAuthTestCase(GlobalViewTestCase):
+class RacaViewSemAuthTestCase(GlobalViewSemAuthTestCase):
   fixtures = [
     'fixtures/especie.json',
     'fixtures/racas.json'
@@ -35,7 +35,7 @@ class RacaViewSemAuthTestCase(GlobalViewTestCase):
   def test_get_para_listar_racas(self):
     response = self.fazer_requisicao_get()
     self.espera_resposta_ser_ok(response)
-  
+
   def test_post_para_criar_raca(self):
     response = self.fazer_requisicao_post({
       'nome': 'raca1'

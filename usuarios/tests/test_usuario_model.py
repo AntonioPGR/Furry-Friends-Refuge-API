@@ -1,6 +1,6 @@
 from tools.global_test_model import GlobalModelTestCase
 from usuarios.models import Usuario
-from tools.global_test_view import GlobalViewTestCase
+from tools.global_test_view_with_no_auth import GlobalViewSemAuthTestCase
 
 
 class UsuarioModelTestCase(GlobalModelTestCase):
@@ -31,7 +31,7 @@ class UsuarioModelTestCase(GlobalModelTestCase):
     self.assertEqual(self.usuario_correto.get_full_name(), 'Antonio Pacheco')
     
 
-class UsuarioViewSemAuthTestCase(GlobalViewTestCase):
+class UsuarioViewSemAuthTestCase(GlobalViewSemAuthTestCase):
   fixtures = [
     'fixtures/usuarios.json',
   ]

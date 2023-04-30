@@ -2,7 +2,7 @@ from animais.models import Animal, Raca
 from usuarios.models import Usuario
 from abrigos.models import Abrigo
 from tools.global_test_model import GlobalModelTestCase 
-from tools.global_test_view import GlobalViewTestCase
+from tools.global_test_view_with_no_auth import GlobalViewSemAuthTestCase
 from datetime import date
 
 class AnimalModelTestCase(GlobalModelTestCase):
@@ -15,7 +15,7 @@ class AnimalModelTestCase(GlobalModelTestCase):
   
   def test_animal_criado_corretamente(self):
     animal_correto = Animal(
-      nome='Charlie',
+      nome='Charlie Bobinson',
       sexo='M',
       descricao='This is Charlie, a friendly and active dog.',
       status='D',
@@ -40,7 +40,7 @@ class AnimalModelTestCase(GlobalModelTestCase):
     self.espera_erro_de_validacao(animal_correto)
     
 
-class AnimalViewSemAuthTestCase(GlobalViewTestCase):
+class AnimalViewSemAuthTestCase(GlobalViewSemAuthTestCase):
   fixtures = [
     'fixtures/animais.json',
     'fixtures/especie.json',

@@ -1,6 +1,6 @@
 from animais.models import Especie
 from tools.global_test_model import GlobalModelTestCase 
-from tools.global_test_view import GlobalViewTestCase
+from tools.global_test_view_with_no_auth import GlobalViewSemAuthTestCase
 
 
 
@@ -19,7 +19,7 @@ class EspecieModelTestCase(GlobalModelTestCase):
     self.espera_erro_de_validacao(especie_incorreta)
     
 
-class EspecieViewSemAuthTestCase(GlobalViewTestCase):
+class EspecieViewSemAuthTestCase(GlobalViewSemAuthTestCase):
   fixtures = [
     'fixtures/especie.json',
   ]

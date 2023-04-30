@@ -1,6 +1,6 @@
 from abrigos.models import Abrigo
 from tools.global_test_model import GlobalModelTestCase
-from tools.global_test_view import GlobalViewTestCase
+from tools.global_test_view_with_no_auth import GlobalViewSemAuthTestCase
 
 
 class AbrigoModelTestCase(GlobalModelTestCase):
@@ -26,7 +26,7 @@ class AbrigoModelTestCase(GlobalModelTestCase):
     self.espera_erro_de_validacao(abrigo_incorreto)
     
     
-class AbrigoViewSemAuthTestCase(GlobalViewTestCase):
+class AbrigoViewSemAuthTestCase(GlobalViewSemAuthTestCase):
   fixtures = [
     'fixtures/abrigos.json',
   ]

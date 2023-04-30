@@ -6,7 +6,8 @@ from django.core.exceptions import ValidationError
 class GlobalValidator:
   @classmethod
   def validar_nome(cls, nome:str):
-    if not nome.isalpha():
+    nome_sem_espaco = nome.replace(' ', '')
+    if not nome_sem_espaco.isalpha():
       cls.raise_validation_error('São proibidos simbolos e numeros no campo nome')
     return nome
   
