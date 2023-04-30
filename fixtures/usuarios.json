@@ -16,12 +16,12 @@
     "model": "usuarios.Usuario",
     "pk": 2,
     "fields": {
-      "email": "user2@example.com",
-      "nome": "Jane",
-      "sobrenome": "Doe",
+      "email": "admin@gmail.com",
+      "nome": "admin",
+      "sobrenome": "admin",
       "nascimento": "1985-02-01",
-      "is_active": false,
-      "is_staff": false,
+      "is_active": true,
+      "is_staff": true,
       "date_joined": "2022-03-02T12:00:00Z"
     }
   },

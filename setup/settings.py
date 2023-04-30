@@ -48,11 +48,14 @@ INSTALLED_APPS = [
     # INSTALLED
     'rest_framework',
     'django_filters',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -144,12 +147,34 @@ AUTH_USER_MODEL = "usuarios.Usuario"
 
 # REST FRAMEWORK
 REST_FRAMEWORK = {
-  'DEFAULT_PERMISSION_CLASSES': [
-    'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-  ],
   'DEFAULT_FILTER_BACKENDS': [
     'rest_framework.filters.SearchFilter',
     'rest_framework.filters.OrderingFilter',
     'django_filters.rest_framework.DjangoFilterBackend',
-  ]
+  ],
+	'DEFAULT_PERMISSION_CLASSES': [
+		# 'rest_framework.permissions.IsAuthenticated',
+  	'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+	],
+ 'DEFAULT_AUTHENTICATION_CLASSES': [
+		'rest_framework.authentication.BasicAuthentication',
+	],
 }
+
+# CORS: 
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = [
+  'http://localhost:8000',
+]
+CORS_ALLOW_CREDENTIALS = True
+CORS_EXPOSE_HEADERS = [
+  'Access-Control-Allow-Credentials',
+]
+CORS_ALLOW_METHODS = [
+	"GET",
+	"POST",
+	"DELETE",
+	"PUT",
+	"PATCH",
+	"OPTIONS",
+]

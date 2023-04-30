@@ -2,12 +2,14 @@ from rest_framework.viewsets import ModelViewSet
 from animais.models import Especie, Raca, Animal
 from animais.serializers import EspeciesSerializer, RacasSerializer, AnimaisSerializer
 
+from rest_framework.response import Response
+
 class EspecieViewSet(ModelViewSet):
   queryset = Especie.objects.all()
   serializer_class = EspeciesSerializer
   search_fields = ['nome']
   ordering = ['nome']
-  
+    
   
 class RacaViewSet(ModelViewSet):
   queryset = Raca.objects.all()
