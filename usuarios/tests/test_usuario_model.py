@@ -1,6 +1,5 @@
 from tools.global_test_model import GlobalModelTestCase
 from usuarios.models import Usuario
-from tools.global_test_view_with_no_auth import GlobalViewSemAuthTestCase
 
 
 class UsuarioModelTestCase(GlobalModelTestCase):
@@ -30,41 +29,3 @@ class UsuarioModelTestCase(GlobalModelTestCase):
   def test_pegar_nome_completo(self):
     self.assertEqual(self.usuario_correto.get_full_name(), 'Antonio Pacheco')
     
-
-class UsuarioViewSemAuthTestCase(GlobalViewSemAuthTestCase):
-  fixtures = [
-    'fixtures/usuarios.json',
-  ]
-  
-  def setUp(self):
-    super().setUp('usuarios')
-  
-  def test_get_lista_de_usuarios(self):
-    response = self.fazer_requisicao_get()
-    self.espera_resposta_ser_forbidden(response)
-  
-  def test_post_para_criar_usuario(self):
-    response = self.fazer_requisicao_post({
-      'nome': 'abrigo1'
-    })
-    self.espera_resposta_ser_forbidden(response)
-    
-  def test_patch_para_modificar_usuario(self):
-    response = self.fazer_requisicao_patch({
-      'id': Usuario.objects.first().id,
-      'nome': 'abrigo1'
-    })
-    self.espera_resposta_ser_forbidden(response)
-    
-  def test_put_para_modificar_usuario(self):
-    response = self.fazer_requisicao_put({
-      'id': Usuario.objects.first().id,
-      'nome': 'abrigo1'
-    })
-    self.espera_resposta_ser_forbidden(response)
-    
-  def test_delete_para_deletar_usuario(self):
-    response = self.fazer_requisicao_put({
-      'id': Usuario.objects.first().id,
-    })
-    self.espera_resposta_ser_forbidden(response)

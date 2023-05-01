@@ -3,12 +3,13 @@
     "model": "usuarios.Usuario",
     "pk": 1,
     "fields": {
-      "email": "user1@example.com",
+      "email": "super@example.com",
       "nome": "John",
       "sobrenome": "Doe",
       "nascimento": "1980-01-01",
       "is_active": false,
-      "is_staff": false,
+      "is_staff": true,
+      "is_superuser": true,
       "date_joined": "2022-03-01T12:00:00Z"
     }
   },
