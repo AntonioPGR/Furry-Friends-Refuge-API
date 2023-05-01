@@ -1,8 +1,11 @@
 from django.urls import reverse
 from rest_framework.test import APITestCase
+from usuarios.models import Usuario
 
-class GlobalViewSemAuthTestCase(APITestCase):
-  
+class GlobalViewTestCase(APITestCase):
+  fixtures = [
+    'fixtures/usuarios.json',
+  ]
   
   def setUp(self, url:str):
     self.url_name = url
@@ -37,3 +40,11 @@ class GlobalViewSemAuthTestCase(APITestCase):
   
   def espera_resposta_ser_forbidden(self, request):
     return self.assertEqual(request.status_code, 403)
+  
+  def autenticar_como_superusuario(self):
+    usuario = Usuario.objects.get(is_superuser=True)
+    self.client.force_authenticate(user=usuario)
+    
+  def autenticar_como_usuario_comum(self):
+    usuario = Usuario.objects.filter(is_superuser=False)[0]
+    self.client.force_authenticate(user=usuario)

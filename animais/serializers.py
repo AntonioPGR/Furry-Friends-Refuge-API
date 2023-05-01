@@ -12,7 +12,6 @@ class RacasSerializer(ModelSerializer):
   class Meta:
     model = Raca
     fields = '__all__'
-    depth = 1
     read_only_fields = ['id']
 
   
@@ -20,7 +19,6 @@ class AnimaisSerializer(ModelSerializer):
   class Meta:
     model = Animal
     fields = '__all__'
-    depth = 1
     read_only_fields = ['id']
     
 
