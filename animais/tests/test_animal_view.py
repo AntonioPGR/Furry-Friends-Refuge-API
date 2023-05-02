@@ -50,27 +50,27 @@ class AnimalViewSemAuthTestCase(DefaultAnimalViewTestCase, GlobalViewTestCase):
     response = self.fazer_requisicao_post(
       self.dados
     )
-    self.espera_resposta_ser_forbidden(response)
+    self.espera_resposta_ser_unauthorized(response)
     
   def test_patch_para_modificar_animal(self):
     response = self.fazer_requisicao_patch(
       self.model.objects.first().id,
       self.dados
     )
-    self.espera_resposta_ser_forbidden(response)
+    self.espera_resposta_ser_unauthorized(response)
     
   def test_put_para_modificar_animal(self):
     response = self.fazer_requisicao_put(
       self.model.objects.first().id,
       self.dados
     )
-    self.espera_resposta_ser_forbidden(response)
+    self.espera_resposta_ser_unauthorized(response)
     
   def test_delete_para_deletar_animal(self):
     response = self.fazer_requisicao_delete(
       self.model.objects.first().id
     )
-    self.espera_resposta_ser_forbidden(response)
+    self.espera_resposta_ser_unauthorized(response)
     
 
 class AnimalViewAutenticadoComoAdmTestCase(DefaultAnimalViewTestCase, GlobalViewTestCase):
@@ -114,7 +114,7 @@ class AnimalViewAutenticadoComoUsuarioTestCase(DefaultAnimalViewTestCase, Global
   def setUp(self):
     super().setUp('animais')
     super().criar_dados()
-    self.autenticar_como_usuario_comum
+    self.autenticar_como_usuario_comum()
   
   def test_get_lista_de_animais(self):
     response = self.fazer_requisicao_get()

@@ -40,6 +40,9 @@ class GlobalViewTestCase(APITestCase):
   
   def espera_resposta_ser_forbidden(self, request):
     return self.assertEqual(request.status_code, 403)
+
+  def espera_resposta_ser_unauthorized(self, request):
+    return self.assertEqual(request.status_code, 401)
   
   def autenticar_como_superusuario(self):
     usuario = Usuario.objects.get(is_superuser=True)

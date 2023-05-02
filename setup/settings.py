@@ -148,5 +148,8 @@ REST_FRAMEWORK = {
     'rest_framework.filters.SearchFilter',
     'rest_framework.filters.OrderingFilter',
     'django_filters.rest_framework.DjangoFilterBackend',
+  ],
+  'DEFAULT_AUTHENTICATION_CLASSES': [
+    'rest_framework.authentication.BasicAuthentication',
   ]
 }

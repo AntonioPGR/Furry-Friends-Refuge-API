@@ -26,27 +26,27 @@ class RacaViewSemAuthTestCase(DefaultRacaViewTestCase ,GlobalViewTestCase):
 
   def test_post_para_criar_raca(self):
     response = self.fazer_requisicao_post(self.dados)
-    self.espera_resposta_ser_forbidden(response)
+    self.espera_resposta_ser_unauthorized(response)
     
   def test_patch_para_modificar_raca(self):
     response = self.fazer_requisicao_patch(
       self.model.objects.first().id,
       self.dados
     )
-    self.espera_resposta_ser_forbidden(response)
+    self.espera_resposta_ser_unauthorized(response)
     
   def test_put_para_modificar_raca(self):
     response = self.fazer_requisicao_put(
       self.model.objects.first().id,
       self.dados
     )
-    self.espera_resposta_ser_forbidden(response)
+    self.espera_resposta_ser_unauthorized(response)
     
   def test_delete_para_deletar_raca(self):
     response = self.fazer_requisicao_delete(
       self.model.objects.first().id
     )
-    self.espera_resposta_ser_forbidden(response)
+    self.espera_resposta_ser_unauthorized(response)
     
     
 class RacaViewAutenticadoComoAdmTestCase(DefaultRacaViewTestCase ,GlobalViewTestCase):
