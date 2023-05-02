@@ -48,11 +48,14 @@ INSTALLED_APPS = [
     # INSTALLED
     'rest_framework',
     'django_filters',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -144,12 +147,26 @@ AUTH_USER_MODEL = "usuarios.Usuario"
 
 # REST FRAMEWORK
 REST_FRAMEWORK = {
+  #PAGINATION
+  'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+  'PAGE_SIZE': 15,
+  #FILTERS, SEARCH AND ORDER
   'DEFAULT_FILTER_BACKENDS': [
     'rest_framework.filters.SearchFilter',
     'rest_framework.filters.OrderingFilter',
     'django_filters.rest_framework.DjangoFilterBackend',
   ],
+  #AUTH
   'DEFAULT_AUTHENTICATION_CLASSES': [
     'rest_framework.authentication.BasicAuthentication',
   ]
 }
+
+# CORS:
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+]
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://localhost:\d{4}",
+]
