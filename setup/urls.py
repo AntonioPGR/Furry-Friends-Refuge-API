@@ -8,6 +8,25 @@ from animais.views import AnimalViewSet, EspecieViewSet, RacaViewSet
 from abrigos.views import AbrigoViewSet
 from usuarios.views import UsuarioViewSet
 
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+...
+
+schema_view = get_schema_view(
+  openapi.Info(
+    title="Furry Friends Refuge",
+    default_version='v1',
+    description="",
+    terms_of_service="https://www.google.com/policies/terms/",
+    contact=openapi.Contact(email="antoninhopgr@gmail.com"),
+    license=openapi.License(name="MIT license"),
+  ),
+  public=True,
+  permission_classes=[permissions.AllowAny],
+)
+
 router = DefaultRouter()
 router.register('usuarios', UsuarioViewSet, basename='usuarios')
 router.register('animais', AnimalViewSet, basename='animais')
@@ -18,7 +37,8 @@ router.register('abrigos', AbrigoViewSet, basename='abrigos')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls))
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('', include(router.urls)),
 ]
 
 if settings.DEBUG:
